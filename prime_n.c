@@ -1,12 +1,13 @@
 #include<stdio.h>
+static int b;
 int main()
 {
-	int a,i,j;
+	int a,j;
+        static int i;
 	printf("Enter the number:");
 	scanf("%d",&a);
 	for(i=2;i<a;i++)
 	{
-               int b=0;
 		for ( j=1;j<i;j++)
 		{
 			if (i%j==0)
@@ -18,6 +19,7 @@ int main()
 			}
 	
 		}
+	}
 	
 		if(b==1)
 		{
@@ -28,9 +30,10 @@ int main()
 //			printf("%d",i);
 //	
 	
-	}	
+	
 	
 }
 
 		
 			
+		

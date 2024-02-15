@@ -1,22 +1,33 @@
-#include <stdio.h>
-
-int main() {
-    int numRows;
-
-    // Get the number of rows from the user
-    printf("Enter the number of rows: ");
-    scanf("%d", &numRows);
-
-    // Outer loop for rows
-    for (int i = 1; i <= numRows; i++) {
-        // Inner loop for printing numbers
-        for (int j = 1; j <= 2 * i - 1; j++) {
-            printf("%d", j);
-        }
-
-        printf("\n");
-    }
-
-    return 0;
+#include<stdio.h>
+int main()
+{
+	int i,j,n;
+	scanf("%d",&n);
+	for (i=0;i<((n+1)/2-1);i++)
+	{
+		printf(" ");
+		for(j=i;j<(n+1)/2;j++)
+		{
+			printf("*");
+		}
+	//	printf("*");
+	printf("\n");
+	}
+	for(i=(n+1)/2;i<=n;i++)
+	{
+		if(i==4)
+		{
+			printf("*");
+		}
+		else
+		{
+			printf(" ");
+			for(j=i;j>=(n+1)/2;j--)
+			{
+				printf("*");
+			}
+		}
+	printf("\n");
+	}
 }
 
