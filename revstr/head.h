@@ -1,0 +1,1 @@
+void strspace(char *a);
