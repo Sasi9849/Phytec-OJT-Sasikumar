@@ -1,41 +1,50 @@
 #include <stdio.h>
+#define N 4
 
-int main() {
-    int matrix[10][10], transpose[10][10];
-    int numRows, numCols;
+void add(int A[][N], int B[][N], int C[][N])
+{
+	int i, j;
+	for (i = 0; i < N; i++)
+		for (j = 0; j < N; j++)
+			C[i][j] = A[i][j] + B[i][j];
+}
 
-    // Get the number of rows and columns from the user
-    printf("Enter the number of rows: ");
-    scanf("%d", &numRows);
+void printmatrix(int D[][N])
+{
+	int i, j;
+	for (i = 0; i < N; i++) {
+		for (j = 0; j < N; j++)
+			printf("%d ", D[i][j]);
+		printf("\n");
+	}
+}
 
-    printf("Enter the number of columns: ");
-    scanf("%d", &numCols);
+int main()
+{
+	int A[N][N] = { { 1, 1, 1, 1 },
+					{ 2, 2, 2, 2 },
+					{ 3, 3, 3, 3 },
+					{ 4, 4, 4, 4 } };
 
-    // Input the matrix elements from the user
-    printf("Enter the elements of the matrix:\n");
-    for (int i = 0; i < numRows; i++) {
-        for (int j = 0; j < numCols; j++) {
-            printf("Element at [%d][%d]: ", i + 1, j + 1);
-            scanf("%d", &matrix[i][j]);
-        }
-    }
+	int B[N][N] = { { 1, 1, 1, 1 },
+					{ 2, 2, 2, 2 },
+					{ 3, 3, 3, 3 },
+					{ 4, 4, 4, 4 } };
 
-    // Find the transpose of the matrix
-    for (int i = 0; i < numCols; i++) {
-        for (int j = 0; j < numRows; j++) {
-            transpose[i][j] = matrix[j][i];
-        }
-    }
+	int C[N][N];
+	int i, j;
 
-    // Print the transpose matrix
-    printf("Transpose Matrix:\n");
-    for (int i = 0; i < numCols; i++) {
-        for (int j = 0; j < numRows; j++) {
-            printf("%d\t", transpose[i][j]);
-        }
-        printf("\n");
-    }
+	printf("Matrix A is \n");
+	printmatrix(A);
 
-    return 0;
+	printf("Matrix B is \n");
+	printmatrix(B);
+
+	add(A, B, C);
+
+	printf("Result matrix is \n");
+	printmatrix(C);
+
+	return 0;
 }
 
